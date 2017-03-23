@@ -1,0 +1,62 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="app">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ariahidden="true">&times;</button>
+                <!--<h4 class="modal-title">{{vm.title}}</h4>-->
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Music Name</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="title" placeholder="MusicName" v-model="title" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="author" class="col-sm-2 control-label">Author</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="author" placeholder="author" v-model="author">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="length" class="col-sm-2 control-label">Length</label>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" id="length" placeholder="Minute" v-model="munites">
+                        </div>
+                        <div class="col-sm-1">
+                            <label for="length" class="control-label">Minutes</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="number" class="form-control" id="length" placeholder="Seconds" v-model="seconds">
+                        </div>
+                        <div class="col-sm-1">
+                            <label for="length" class="control-label">Second</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" id="app">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                <button type="button" v-on:click="greet" class="btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var example2 = new Vue({
+  el: '#app',
+  methods: {
+    greet: function (event) {
+      // `this` inside methods points to the Vue instance
+      alert('Hello ' + this.title + '!')
+      // `event` is the native DOM event
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+})
+
+</script>

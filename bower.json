@@ -1,0 +1,25 @@
+{
+  "name": "music_app",
+  "description": "example music app",
+  "main": "server.js",
+  "authors": [
+    "Puttipong <zer.n3w@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.6",
+    "traceur": "^0.0.79",
+    "angular-modal-service": "^0.10.0",
+    "font-awesome": "^4.6.3"
+  }
+}

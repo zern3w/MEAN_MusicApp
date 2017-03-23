@@ -1,0 +1,32 @@
+<!-- home.html -->
+<div class="table-responsive">
+    <h3>{{vm.title}}</h3>
+    <table class="table">
+        <!-- table header -->
+        <tr>
+            <th class="col-md-1">#</th>
+            <th class="col-md-2">Title</th>
+            <th class="col-md-2">Author</th>
+            <th class="col-md-1">Length</th>
+            <th class="col-md-3">Actions</th>
+        </tr>
+        <!-- table row data -->
+        <tr ng-repeat="music in vm.musicList" ng-class="{'success': music.favorite, 'inactive':
+!music.favorite}">
+            <td> {{$index + 1}} </td>
+            <td>{{music.title}}</td>
+            <td>{{music.author}}</td>
+            <td>{{music.lengthInSeconds * 1000 | date:'mm:ss'}}</td>
+            <td>
+                <a ng-click="vm.markFavorite(music._id, !music.favorite)" class="btn btn-sm btn-
+{{music.favorite ?'success': 'primary'}}">
+                    <i class="fa fa-heart fa-lg" aria-hidden="true"></i></a>
+                <button ng-click="vm.showEditModal(music)" class="btn btn-info">Edit</button>
+                <button ng-click="vm.delete(music._id)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </table>
+    <div id="music-list">
+        <button type="button" class="btn btn-info btn-lg" ng-click="vm.showAddModal()">Add music</button>
+    </div>
+</div>
